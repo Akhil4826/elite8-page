@@ -5,10 +5,9 @@
   <p>A modern, interactive website showcasing digital agency services with stunning animations and responsive design</p>
   
   ![Website Preview](https://github.com/user-attachments/assets/5ac51808-f5f3-4099-a38a-a71622797b31)
-
   
   <p>
-    <a href="https://elite8.up.railway.app/" target="_blank" rel="noopener noreferrer">View Demo</a>
+    <a href="https://elite8.up.railway.app/" target="_blank" rel="noopener noreferrer"><strong>🌐 View Live Demo</strong></a> •
     <a href="#features">Features</a> •
     <a href="#installation">Installation</a> •
     <a href="#usage">Usage</a> •
@@ -34,7 +33,6 @@
 - [Contact](#contact)
 
 ---
-
 ## 🎯 About
 
 Elite8 Digital is a premium digital agency website built with modern web technologies. It features stunning animations, interactive elements, and a responsive design that adapts to all devices. The website showcases digital services including strategy, brand design, and web development.
