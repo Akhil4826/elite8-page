@@ -153,7 +153,7 @@ elite8-digital/
 1. **Clone or Download**
    ```bash
    # Clone the repository
-   git clone [https://github.com/akhil4826/elite8-page.git](https://github.com/Akhil4826/elite8-page.git)
+   git clone https://github.com/Akhil4826/elite8-page.git
    
    # Or download ZIP file and extract
    ```
