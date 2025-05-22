@@ -8,7 +8,7 @@
 
   
   <p>
-    <a href="#demo">View Demo</a> •
+    <a href="https://elite8.up.railway.app/" target="_blank" rel="noopener noreferrer">View Demo</a>
     <a href="#features">Features</a> •
     <a href="#installation">Installation</a> •
     <a href="#usage">Usage</a> •
