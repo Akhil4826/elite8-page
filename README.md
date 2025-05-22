@@ -4,7 +4,8 @@
   <h3>🚀 Digital Excellence Redefined</h3>
   <p>A modern, interactive website showcasing digital agency services with stunning animations and responsive design</p>
   
-  ![Website Preview](https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Elite8+Digital)
+  ![Website Preview](https://github.com/user-attachments/assets/5ac51808-f5f3-4099-a38a-a71622797b31)
+
   
   <p>
     <a href="#demo">View Demo</a> •
