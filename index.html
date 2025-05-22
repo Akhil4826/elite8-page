@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite8 Digital - Digital Excellence Redefined</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element" style="left: 20%; top: 30%; animation: float 6s infinite 0s ease-in-out;">💎</div>
+        <div class="floating-element" style="left: 35%; top: 40%; animation: float 8s infinite 2s ease-in-out;">⚡</div>
+        <div class="floating-element" style="left: 50%; top: 50%; animation: float 7s infinite 4s ease-in-out;">🚀</div>
+        <div class="floating-element" style="left: 65%; top: 35%; animation: float 9s infinite 1s ease-in-out;">✨</div>
+        <div class="floating-element" style="left: 80%; top: 45%; animation: float 5s infinite 3s ease-in-out;">🎯</div>
+    </div>
+
+   <!-- Navigation -->
+<nav class="nav" id="nav">
+    <div class="nav-container">
+        <div class="nav-content">
+            <div class="logo">Elite8 Digital</div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <button class="btn-secondary" onclick="location.href='index.html'">
+                        <span>Home</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn-secondary" onclick="location.href='work.html'">
+                        <span>Work</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn-secondary" onclick="location.href='about.html'">
+                        <span>About</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn-secondary" onclick="location.href='contact.html'">
+                        <span>Contact</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span id="menuIcon">☰</span>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <button class="btn-secondary mobile-menu-item" onclick="location.href='index.html'">Home</button>
+                <button class="btn-secondary mobile-menu-item" onclick="location.href='work.html'">Work</button>
+                <button class="btn-secondary mobile-menu-item" onclick="location.href='about.html'">About</button>
+                <button class="btn-secondary mobile-menu-item" onclick="location.href='contact.html'">Contact</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-blob hero-blob-1" id="blob1"></div>
+            <div class="hero-blob hero-blob-2" id="blob2"></div>
+            <div class="hero-blob hero-blob-3" id="blob3"></div>
+        </div>
+
+        <div class="hero-content" id="heroContent">
+            <div class="hero-title-container">
+                <h1 class="hero-title">
+                    <span class="hero-gradient-text">Digital Excellence</span>
+                    <br>
+                    <span class="hero-white-text">Redefined</span>
+                </h1>
+                <div class="hero-line-top"></div>
+                <div class="hero-line-bottom"></div>
+            </div>
+            
+            <p class="hero-subtitle">
+                We craft <span class="hero-highlight">extraordinary digital experiences</span> that captivate, engage, and convert. 
+                Your vision, amplified through <span class="hero-highlight-pink">cutting-edge creativity</span>.
+            </p>
+            
+            <div class="hero-buttons">
+                <button class="btn-primary">
+                    <span>Start Your Journey</span>
+                    <span class="arrow-icon">→</span>
+                </button>
+                <button class="btn-secondary" onclick="location.href='case.html'">
+                    <span class="play-icon">▶</span>
+                    <span>View Our Portfolio</span>
+                </button>
+                
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Experts</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-text">Scroll to explore</div>
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="work">
+        <div class="services-container">
+            <div class="services-header">  
+                <h2 class="services-title">
+                    <span class="services-title-gradient">What We Do</span>
+                </h2>
+                <p class="services-subtitle">
+                    We combine strategy, creativity, and technology to deliver results that matter and transform businesses.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-service="0">
+                    <div class="service-card-inner">
+                        <div class="service-bg-effect" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);"></div>
+                        
+                        <div class="service-icon" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);">
+                            <svg width="48" height="48" fill="white" viewBox="0 0 24 24">
+                                <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="service-title">Digital Strategy</h3>
+                        
+                        <p class="service-description">
+                            Comprehensive digital transformation strategies that drive real results and sustainable growth through data-driven insights.
+                        </p>
+
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);"></div>
+                                <span>Market Analysis</span>
+                            </div>
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);"></div>
+                                <span>Competitor Research</span>
+                            </div>
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);"></div>
+                                <span>Growth Planning</span>
+                            </div>
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);"></div>
+                                <span>ROI Optimization</span>
+                            </div>
+                        </div>
+
+                        <div class="service-arrow">
+                            <svg width="32" height="32" fill="#a855f7" viewBox="0 0 24 24">
+                                <path d="M5 12h14m-7-7l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="1">
+                    <div class="service-card-inner">
+                        <div class="service-bg-effect" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);"></div>
+                        
+                        <div class="service-icon" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
+                            <svg width="48" height="48" fill="white" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="service-title">Brand Design</h3>
+                        
+                        <p class="service-description">
+                            Creative brand identities that capture attention and leave lasting impressions on your audience with stunning visual narratives.
+                        </p>
+
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);"></div>
+                                <span>Logo Design</span>
+                            </div>
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);"></div>
+                                <span>Brand Guidelines</span>
+                            </div>
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);"></div>
+                                <span>Visual Identity</span>
+                            </div>
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);"></div>
+                                <span>Brand Strategy</span>
+                            </div>
+                        </div>
+
+                        <div class="service-arrow">
+                            <svg width="32" height="32" fill="#a855f7" viewBox="0 0 24 24">
+                                <path d="M5 12h14m-7-7l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card" data-service="2">
+                    <div class="service-card-inner">
+                        <div class="service-bg-effect" style="background: linear-gradient(135deg, #10b981, #14b8a6);"></div>
+                        
+                        <div class="service-icon" style="background: linear-gradient(135deg, #10b981, #14b8a6);">
+                            <svg width="48" height="48" fill="white" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="service-title">Web Development</h3>
+                        
+                        <p class="service-description">
+                            Cutting-edge websites and applications built with the latest technologies, optimized for performance and user experience.
+                        </p>
+
+                        <div class="service-features">
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #10b981, #14b8a6);"></div>
+                                <span>Responsive Design</span>
+                            </div>
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #10b981, #14b8a6);"></div>
+                                <span>E-commerce</span>
+                            </div>
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #10b981, #14b8a6);"></div>
+                                <span>Custom Apps</span>
+                            </div>
+                            <div class="service-feature">
+                                <div class="service-feature-dot" style="background: linear-gradient(135deg, #10b981, #14b8a6);"></div>
+                                <span>Performance Optimization</span>
+                            </div>
+                        </div>
+
+                        <div class="service-arrow">
+                            <svg width="32" height="32" fill="#a855f7" viewBox="0 0 24 24">
+                                <path d="M5 12h14m-7-7l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="about">
+        <div class="testimonials-container">
+            <h2 class="testimonials-title">
+                <span class="testimonials-title-gradient">Client Stories</span>
+            </h2>
+
+            <div class="testimonial-card">
+                <div class="testimonial-bg-pattern"></div>
+                
+                <div class="testimonial-content">
+                    <div class="testimonial-stars" id="testimonialStars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+
+                    <div class="testimonial-text" id="testimonialText">
+                        Elite8 Digital transformed our digital presence completely. Their creative approach exceeded all expectations and delivered phenomenal results.
+                    </div>
+                    
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-card">
+                            <div class="testimonial-avatar" id="testimonialAvatar">S</div>
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name" id="testimonialName">Sarah Johnson</div>
+                                <div class="testimonial-author-company" id="testimonialCompany">TechStart Inc.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-controls">
+                <button class="testimonial-dot active" data-testimonial="0"></button>
+                <button class="testimonial-dot" data-testimonial="1"></button>
+                <button class="testimonial-dot" data-testimonial="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="cta-bg"></div>
+        <div class="cta-overlay"></div>
+        
+        <div class="cta-content">
+            <h2 class="cta-title">
+                Ready to Create Something<br>
+                <span class="cta-title-gradient">Amazing?</span>
+            </h2>
+            
+            <p class="cta-subtitle">
+                Let's discuss your project and bring your vision to life with our expertise, creativity, and cutting-edge technology solutions.
+            </p>
+            
+            <div class="cta-buttons">
+                <button class="btn-cta-primary">
+                    <span>Get Started Today</span>
+                    <span class="arrow-icon">→</span>
+                </button>
+                <button class="btn-cta-secondary">
+                    <span class="volume-icon">🔊</span>
+                    <span>Schedule a Call</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bg">
+            <div class="footer-blob-1"></div>
+            <div class="footer-blob-2"></div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">Elite8 Digital</div>
+                    <p class="footer-description">
+                        Crafting extraordinary digital experiences that captivate, engage, and convert. Your success is our passion.
+                    </p>
+                    <div class="footer-social">
+                        <button class="social-btn">L</button>
+                        <button class="social-btn">T</button>
+                        <button class="social-btn">I</button>
+                        <button class="social-btn">D</button>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link">Digital Strategy</li>
+                        <li class="footer-link">Brand Design</li>
+                        <li class="footer-link">Web Development</li>
+                        <li class="footer-link">UI/UX Design</li>
+                        <li class="footer-link">E-commerce</li>
+                        <li class="footer-link">SEO Optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>akhilteotia19@gmail.com</li>
+                        <li>+91 (953) 577-5545</li>
+                        <li>Bangalore, BA</li>
+                        <li>Karnataka, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2025 Elite8 Digital. All rights reserved.
+                </p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+ 
+</body>
+</html>

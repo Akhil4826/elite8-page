@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Elite8 Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            padding: 12rem 1rem 8rem;
+            background: radial-gradient(circle at 20% 50%, #1a1a2e 0%, #16213e 25%, #0f0f23 50%, #000 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(168, 85, 247, 0.05) 50%, transparent 70%);
+            animation: slide-right 8s ease-in-out infinite;
+        }
+
+        .about-hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero-text h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #a855f7, #ec4899, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        .about-hero-text p {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .about-hero-visual {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-visual-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            animation: spin 20s linear infinite;
+        }
+
+        .about-visual-circle:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            animation-duration: 20s;
+        }
+
+        .about-visual-circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            border-color: rgba(236, 72, 153, 0.3);
+            animation-duration: 15s;
+            animation-direction: reverse;
+        }
+
+        .about-visual-circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            border-color: rgba(59, 130, 246, 0.3);
+            animation-duration: 10s;
+        }
+
+        .about-visual-center {
+            position: relative;
+            z-index: 10;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .story-section {
+            padding: 8rem 1rem;
+            background: linear-gradient(135deg, #111827, #1f2937);
+        }
+
+        .story-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .story-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: bold;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            line-height: 1.8;
+        }
+
+        .story-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .story-highlight {
+            color: #a855f7;
+            font-weight: 600;
+        }
+
+        .story-visual {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .values-section {
+            padding: 8rem 1rem;
+            background: #000;
+        }
+
+        .values-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .values-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: bold;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            position: relative;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #1f2937, #374151);
+            border-radius: 20px;
+            border: 1px solid rgba(168, 85, 247, 0.1);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(168, 85, 247, 0.5);
+            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .value-description {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        .team-section {
+            padding: 8rem 1rem;
+            background: linear-gradient(135deg, #1f2937, #111827);
+        }
+
+        .team-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .team-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: bold;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .team-subtitle {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            line-height: 1.6;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .team-member {
+            position: relative;
+            background: linear-gradient(135deg, #374151, #1f2937);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.5s ease;
+            border: 1px solid rgba(168, 85, 247, 0.1);
+            cursor: pointer;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-avatar::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .team-member:hover .member-avatar::before {
+            transform: translateX(100%);
+        }
+
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: #a855f7;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .culture-section {
+            padding: 8rem 1rem;
+            background: radial-gradient(circle at 80% 20%, #8b5cf6 0%, #ec4899 25%, #000 50%);
+        }
+
+        .culture-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .culture-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .culture-subtitle {
+            font-size: 1.25rem;
+            color: #e0e7ff;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            line-height: 1.6;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .culture-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .culture-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .culture-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .culture-text {
+            color: white;
+            font-weight: 600;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles-container" id="particles"></div>
+
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="logo">Elite8 Digital</div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <button class="btn-secondary" onclick="location.href='index.html'">
+                            <span>Home</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn-secondary" onclick="location.href='work.html'">
+                            <span>Work</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn-secondary" onclick="location.href='about.html'">
+                            <span>About</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn-secondary" onclick="location.href='contact.html'">
+                            <span>Contact</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span id="menuIcon">☰</span>
+                </button>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <div class="mobile-menu-content">
+                    <button class="btn-secondary mobile-menu-item" onclick="location.href='home.html'">Home</button>
+                    <button class="btn-secondary mobile-menu-item" onclick="location.href='work.html'">Work</button>
+                    <button class="btn-secondary mobile-menu-item" onclick="location.href='about.html'">About</button>
+                    <button class="btn-secondary mobile-menu-item" onclick="location.href='contact.html'">Contact</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <div class="about-hero-text">
+                <h1>We Are <br>Digital Innovators</h1>
+                <p>
+                    At Elite8 Digital, we believe in the power of <span style="color: #a855f7;">creative technology</span> to transform businesses and create meaningful connections. Our passion drives us to deliver
+                    <span style="color: #ec4899;">extraordinary digital experiences</span> that exceed expectations.
+                </p>
+                <div class="hero-stats" style="justify-content: flex-start; margin-top: 2rem;">
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Experts</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-hero-visual">
+                <div class="about-visual-circle"></div>
+                <div class="about-visual-circle"></div>
+                <div class="about-visual-circle"></div>
+                <div class="about-visual-center">💡</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="story-header">
+                <h2 class="story-title">Our Story</h2>
+            </div>
+
+            <div class="story-content">
+                <div class="story-text">
+                    <p>
+                        Founded in 2016, Elite8 Digital emerged from a simple belief:
+                        <span class="story-highlight">digital experiences should be extraordinary</span>. What started as a small team of passionate designers and developers has grown into a global digital agency serving clients across 25+ countries.
+                    </p>
+                    <p>
+                        Our journey began when we noticed a gap in the market for agencies that could combine
+                        <span class="story-highlight">creative excellence with technical expertise</span>. We set out to bridge that gap, creating solutions that not only look amazing but perform flawlessly.
+                    </p>
+                </div>
+                <div class="story-visual">
+                    🚀
+                </div>
+            </div>
+
+            <div class="story-content" style="direction: rtl;">
+                <div class="story-visual" style="direction: ltr;">
+                    🎯
+                </div>
+                <div class="story-text" style="direction: ltr;">
+                    <p>
+                        Today, we're proud to be recognized as industry leaders in
+                        <span class="story-highlight">digital innovation</span>. Our work has helped hundreds of businesses transform their digital presence, increase engagement, and drive meaningful growth.
+                    </p>
+                    <p>
+                        But we're not stopping here. As technology evolves, so do we. We continue to push boundaries, explore new possibilities, and deliver solutions that set
+                        <span class="story-highlight">new standards for digital excellence</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="values-container">
+            <h2 class="values-title">Our Values</h2>
+            <p style="color: #d1d5db; font-size: 1.25rem; max-width: 600px; margin: 0 auto;">
+                These core principles guide everything we do and shape our approach to every project.
+            </p>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎨</div>
+                    <h3 class="value-title">Creative Excellence</h3>
+                    <p class="value-description">
+                        We believe in the power of creativity to solve complex problems and create memorable experiences.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3 class="value-title">Innovation First</h3>
+                    <p class="value-description">
+                        We stay ahead of trends and embrace new technologies to deliver cutting-edge solutions.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title">Client Partnership</h3>
+                    <p class="value-description">
+                        We build long-term relationships based on trust, transparency, and shared success.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3 class="value-title">Results Driven</h3>
+                    <p class="value-description">
+                        Every decision we make is focused on achieving measurable outcomes for our clients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="team-container">
+            <h2 class="team-title">Meet Our Team</h2>
+            <p class="team-subtitle">
+                The brilliant minds behind Elite8 Digital's success. Each team member brings unique expertise and passion to every project.
+            </p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">AS</div>
+                    <h3 class="member-name">Alex Smith</h3>
+                    <p class="member-role">Creative Director</p>
+                    <p class="member-bio">
+                        10+ years crafting visual experiences that captivate and convert. Passionate about pushing creative boundaries.
+                    </p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">AT</div>
+                    <h3 class="member-name">Akhil Teotia</h3>
+                    <p class="member-role">Developer</p>
+                    <p class="member-bio">
+                        Full-stack developer with expertise in modern frameworks. Loves turning complex ideas into elegant code.
+                    </p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">DC</div>
+                    <h3 class="member-name">David Chen</h3>
+                    <p class="member-role">UX Strategist</p>
+                    <p class="member-bio">
+                        User experience expert focused on creating intuitive, accessible designs that users love to interact with.
+                    </p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">SR</div>
+                    <h3 class="member-name">Sarah Rodriguez</h3>
+                    <p class="member-role">Project Manager</p>
+                    <p class="member-bio">
+                        Ensures every project runs smoothly from concept to completion. Master of coordination and communication.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section">
+        <div class="culture-container">
+            <h2 class="culture-title">Our Culture</h2>
+            <p class="culture-subtitle">
+                We've built a culture that fosters creativity, collaboration, and continuous growth.
+            </p>
+
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <span class="culture-emoji">🌟</span>
+                    <p class="culture-text">Innovation Mindset</p>
+                </div>
+                <div class="culture-item">
+                    <span class="culture-emoji">🎯</span>
+                    <p class="culture-text">Goal Oriented</p>
+                </div>
+                <div class="culture-item">
+                    <span class="culture-emoji">🤝</span>
+                    <p class="culture-text">Collaborative Spirit</p>
+                </div>
+                <div class="culture-item">
+                    <span class="culture-emoji">📚</span>
+                    <p class="culture-text">Continuous Learning</p>
+                </div>
+                <div class="culture-item">
+                    <span class="culture-emoji">🎨</span>
+                    <p class="culture-text">Creative Freedom</p>
+                </div>
+                <div class="culture-item">
+                    <span class="culture-emoji">⚡</span>
+                    <p class="culture-text">Fast Execution</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-bg"></div>
+        <div class="cta-overlay"></div>
+
+        <div class="cta-content">
+            <h2 class="cta-title">
+                Ready to Work<br>
+                <span class="cta-title-gradient">With Us?</span>
+            </h2>
+
+            <p class="cta-subtitle">
+                Join hundreds of satisfied clients who have transformed their digital presence with Elite8 Digital.
+            </p>
+
+            <div class="cta-buttons">
+                <button class="btn-cta-primary" onclick="location.href='contact.html'">
+                    <span>Start a Project</span>
+                    <span class="arrow-icon">→</span>
+                </button>
+                <button class="btn-cta-secondary" onclick="window.open('https://github.com/Akhil4826', '_blank')">
+                    <span>🔗</span>
+                    <span>View GitHub</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include main script file -->
+    <script src="script.js"></script>
+
+    <!-- About page specific functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initAboutPage();
+        });
+
+        function initAboutPage() {
+            initTeamHover();
+            initValueCards();
+            initScrollAnimations();
+            initVisualEffects();
+        }
+
+        // Team member hover effects
+        function initTeamHover() {
+            const teamMembers = document.querySelectorAll('.team-member');
+            const cursor = document.getElementById('cursor');
+
+            teamMembers.forEach(member => {
+                member.addEventListener('mouseenter', () => {
+                    if (cursor) {
+                        cursor.style.transform = 'scale(1.5)';
+                        cursor.style.borderColor = '#ec4899';
+                    }
+                });
+                
+                member.addEventListener('mouseleave', () => {
+                    if (cursor) {
+                        cursor.style.transform = 'scale(1)';
+                        cursor.style.borderColor = '#a855f7';
+                    }
+                });
+            });
+        }
+
+        // Value cards interactions
+        function initValueCards() {
+            const valueCards = document.querySelectorAll('.value-card');
+            
+            valueCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.background = 'linear-gradient(135deg, #374151, #4b5563)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.background = 'linear-gradient(135deg, #1f2937, #374151)';
+                });
+            });
+        }
+
+        // Enhanced scroll animations for about page
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // Add stagger effect for team members
+                        if (entry.target.classList.contains('team-member')) {
+                            const siblings = entry.target.parentElement.children;
+                            Array.from(siblings).forEach((sibling, index) => {
+                                setTimeout(() => {
+                                    sibling.style.opacity = '1';
+                                    sibling.style.transform = 'translateY(0)';
+                                }, index * 200);
+                            });
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            const animatedElements = document.querySelectorAll('.team-member, .value-card, .culture-item');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Visual effects for about page
+        function initVisualEffects() {
+            // Parallax effect for hero visual
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroVisual = document.querySelector('.about-hero-visual');
+                
+                if (heroVisual) {
+                    heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
